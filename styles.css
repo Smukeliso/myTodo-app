@@ -1,0 +1,145 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 10px;
+}
+
+.todo-container {
+    width: 100%;
+    max-width: 600px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s;
+}
+
+.todo-container:hover {
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+h3 {
+    color: #333;
+    text-align: center;
+    font-size: 24px;
+}
+
+#todo-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+#todo-input, #todo-date, button {
+    flex: 1;
+    padding: 10px;
+    margin: 5px 0;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#todo-input:focus, #todo-date:focus, button:focus {
+    border-color: #5cb85c;
+    box-shadow: 0 0 8px rgba(92,184,92,0.5);
+}
+
+button {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #449d44;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 1;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+li.done {
+    text-decoration: line-through;
+    color: #aaa;
+}
+
+.done {
+    text-decoration: line-through;
+    color: #aaa;
+}
+
+
+li:hover {
+    transform: scale(1.03);
+}
+
+.edit-btn, .delete-btn, .save-btn, .cancel-btn {
+    padding: 5px 10px;
+    margin-left: 5px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.delete-btn {
+    background-color: #d9534f;
+    color: white;
+}
+
+.edit-btn {
+    background-color: #f0ad4e;
+    color: white;
+}
+
+.save-btn {
+    background-color: #5cb85c;
+    color: white;
+}
+
+.cancel-btn {
+    background-color: #5bc0de;
+    color: white;
+}
+
+.delete-btn:hover, .edit-btn:hover, .save-btn:hover, .cancel-btn:hover {
+    opacity: 0.8;
+}
+
+/* Media Queries for mobile responsiveness */
+@media (max-width: 600px) {
+    h3 {
+        font-size: 20px;
+    }
+
+    #todo-form {
+        flex-direction: column;
+    }
+
+    #todo-input, #todo-date {
+        width: auto;
+    }
+
+    button {
+        width: 100%;
+    }
+}
